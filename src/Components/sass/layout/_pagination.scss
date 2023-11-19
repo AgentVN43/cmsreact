@@ -1,0 +1,50 @@
+/* 
+    @ website : vietnam-visa.vn
+    @ version : 4.0
+    @ Deployment date : 26/11/2020
+    @ By biendv (biendv@ancu.com)
+    @ Team : Front end develop VNB
+*/
+
+/* Sử dụng cho khối pagination page template blog*/
+.__blog-pagination {
+    margin-top: 32px;
+    display: flex;
+    justify-content: center;
+    ul {
+        margin: 0;
+        li {
+            padding: 0 8px;
+            a {
+                display: block;
+                width: 32px;
+                height: 32px;
+                line-height: 32px;
+                text-align: center;
+                color: #666;
+                .--arrow {
+                    width: 32px;
+                    height: 32px;
+                    display: inline-block;
+                    line-height: 32px;
+                    text-align: center;
+                    border-radius: 50%;
+                    background: #FFFFFF;
+                    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+                }
+            }
+        }
+        li.active {
+            a {
+                display: block;
+                width: 32px;
+                height: 32px;
+                line-height: 32px;
+                text-align: center;
+                background: #009eeb;
+                color: #fff;
+                border-radius: 50%;
+            }
+        }
+    }
+}

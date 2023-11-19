@@ -1,0 +1,1454 @@
+/* 
+    @ website : vietnam-visa.vn
+    @ version : 4.0
+    @ Deployment date : 22/09/2020
+    @ Team : Front end develop VNB
+*/
+
+// Cấu trúc css được chia thành các component
+// Mỗi component sẽ quản lý 1 vùng giao diện
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+@import "../abstracts/functions";
+@import "../base/font";
+/* Begin component style Header top page*/
+
+.heading__top-page {
+    padding-bottom: 24px;
+    @include mobile {
+        padding-bottom: 16px;
+        .resp-h1--mb {
+            font-size: $fs-24;
+            line-height: $line-h-32;
+            margin-bottom: 8px !important;
+        }
+    }
+}
+
+
+/* End component style Header top page*/
+
+
+/* Begin component style Note*/
+
+.shor__note {
+    @include cus-border(8px);
+    padding: 24px;
+    margin-top: 32px;
+    border-left: 8px solid $s-yellow;
+    a {
+        color: $c-green;
+        &:hover {
+            color: $c-green;
+        }
+    }
+    ul {
+        padding-left: 32px;
+        margin: 0;
+        li {
+            padding: 4px 0;
+        }
+    }
+    ol {
+        padding-left: 22px;
+        margin: 0;
+        li {
+            padding: 4px 0;
+        }
+    }
+}
+
+.bod-left {
+    padding-left: 16px;
+    margin-top: 32px;
+    border-left: 4px solid $c-green;
+    a {
+        color: $c-green;
+        &:hover {
+            color: $c-green;
+        }
+    }
+    ol {
+        padding-left: 32px;
+        margin: 0;
+        li {
+            padding: 4px 0;
+        }
+    }
+}
+
+
+/* End component style Note*/
+
+
+/* Begin component style FAQ*/
+
+.shor__faq {
+    margin-bottom: 16px;
+    @include cus-ela(unset);
+    a.view-more {
+        color: $c-green;
+    }
+    .card {
+        border: none;
+        .card-header {
+            background: transparent;
+            border-bottom: 0;
+            border-top: 1px solid $n-light-gray;
+            padding: 16px;
+            a {
+                @include cus-flex;
+                justify-content: space-between;
+                color: $n-black !important;
+            }
+        }
+        .card-body {
+            padding-top: 0;
+            @include cus-ela($c-green);
+            p {
+                margin: 0;
+            }
+            img {
+                width: 270px;
+                height: 180px;
+                object-fit: cover;
+                border-radius: 8px;
+                margin: 16px 16px 0 0;
+            }
+            .list-images {
+                @include mobile {
+                    width: 100%;
+                    overflow: auto;
+                    display: flex;
+                    flex-wrap: nowrap !important;
+                    &::-webkit-scrollbar {
+                        display: none;
+                    }
+                }
+            }
+        }
+        &:last-child {
+            border-bottom: 1px solid $n-light-gray;
+        }
+    }
+    [aria-expanded="true"] {
+        font-weight: bold;
+        .icon-show {
+            &::before {
+                content: "\e92c";
+                font-family: 'icomoon' !important;
+            }
+        }
+    }
+    [aria-expanded="false"] {
+        font-weight: normal;
+        .icon-show {
+            &::before {
+                content: "\e938";
+                font-family: 'icomoon' !important;
+            }
+        }
+    }
+    .view-more {
+        cursor: pointer;
+        user-select: none;
+        color: #009eeb;
+    }
+}
+
+
+/* End component style FAQ*/
+
+
+/* Begin component style Calculate your Visa Fees */
+
+.__shor-fees-nofull-w {
+    .__wrap-form-fees {
+        display: flex;
+        align-items: flex-start;
+        background: $s-white-blue;
+        border-radius: 8px;
+        padding: 32px;
+        @include mobile {
+            display: block;
+            padding: 16px;
+        }
+        .fees-w {
+            @include mobile {
+                width: 100% !important;
+            }
+        }
+        .form-fees {
+            width: 300px;
+            max-width: 300px;
+            margin-right: 32px;
+            @include mobile {
+                margin-right: 0;
+                width: 100%;
+                max-width: 100%;
+            }
+            label {
+                margin-bottom: 4px !important;
+                line-height: 26px;
+            }
+            .form-group {
+                margin-bottom: 16px;
+                display: flow-root;
+                &:last-child {
+                    margin-bottom: 0;
+                }
+                @include mobile {
+                    margin-bottom: 24px;
+                }
+            }
+            select {
+                height: 48px;
+                border-color: $n-light-gray;
+                padding-left: 18px;
+                padding-right: 42px;
+                appearance: none;
+                background: url(../images/arow-d.png) no-repeat right 16px center;
+                cursor: pointer;
+                border-radius: 8px;
+            }
+            .nice-select {
+                @include mobile {
+                    max-width: 100%;
+                    width: 100%;
+                }
+                width: 100%;
+                @include cus-flex;
+                height: 48px;
+                border-color: $n-light-gray;
+                .list {
+                    min-width: 100%;
+                    max-height: 300px;
+                    overflow: auto;
+                    box-shadow: 0 0 0 1px $n-light-gray;
+                }
+                &:focus {
+                    outline: none !important;
+                    box-shadow: none !important;
+                    border-color: $n-light-gray;
+                }
+                &::after {
+                    display: none;
+                }
+                &::before {
+                    position: absolute;
+                    right: 16px;
+                    content: "\e928";
+                    font-family: 'icomoon' !important;
+                    transition: all 0.2s;
+                }
+            }
+            .nice-select.open {
+                &::before {
+                    transform: rotate(180deg);
+                }
+            }
+            .sl-national {
+                .select2-container {
+                    height: 48px;
+                    display: flex;
+                    align-items: center;
+                    box-sizing: border-box;
+                    padding-left: 18px;
+                    padding-right: 42px;
+                    border: 1px solid #d8d8d8;
+                    border-radius: 4px;
+                    background: url(../images/arow-d.png) no-repeat right 16px center;
+                    cursor: pointer;
+                    &:focus {
+                        outline: none;
+                    }
+                    .selection {
+                        width: 100%;
+                        height: 100%;
+                        &:focus {
+                            outline: none;
+                        }
+                        .select2-selection {
+                            &:focus {
+                                outline: none;
+                            }
+                            display: block !important;
+                            width: 100%;
+                            height: 100% !important;
+                            border: none;
+                            .select2-selection__rendered {
+                                width: 100%;
+                                height: 100%;
+                                padding: 0;
+                                display: flex;
+                                align-items: center;
+                            }
+                            .select2-selection__arrow {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .fee-service {
+            @include mobile {
+                margin-left: 0%;
+                width: 100%;
+                margin-top: 32px;
+            }
+            position: relative;
+            @include cus-border(8px);
+            width: 370px;
+            background: $n-white;
+            margin-top: 26px;
+            .fee-normal {
+                hr {
+                    margin: 32px 0;
+                }
+                padding: 32px;
+                text-align: center;
+                .service-price {
+                    font-weight: bold;
+                    font-size: 20px;
+                    line-height: 28px;
+                    margin-bottom: 8px;
+                    .price {
+                        font-size: 32px;
+                        line-height: 40px;
+                        color: $c-red;
+                    }
+                }
+                .price-description {
+                    font-size: 14px;
+                    line-height: 22px;
+                    color: #666;
+                }
+            }
+            .fee-urgent {
+                hr {
+                    margin: 32px 0;
+                }
+                padding: 32px;
+                text-align: center;
+                .__shor-btn-send-req {
+                    margin-top: 14px;
+                }
+                .btn {
+                    width: 100% !important;
+                }
+                .wrap-contact {
+                    @include cus-flex;
+                    .icon--cir {
+                        line-height: 32px;
+                        text-align: center;
+                        border-radius: 50%;
+                    }
+                    .phone {
+                        width: 50%;
+                        .icon--cir {
+                            border: 2px solid $s-red;
+                        }
+                    }
+                    .live-chat {
+                        width: 50%;
+                        .icon--cir {
+                            border: 2px solid $c-green;
+                        }
+                    }
+                }
+            }
+            .fee-diff {
+                hr {
+                    margin: 32px 0;
+                }
+                padding: 32px;
+                text-align: center;
+                .service-price-diff {
+                    font-weight: bold;
+                    font-size: 20px;
+                    line-height: 28px;
+                    margin-bottom: 8px;
+                    .price {
+                        font-size: 32px;
+                        line-height: 40px;
+                        color: $c-red;
+                    }
+                }
+                .price-description-diff {
+                    font-size: 14px;
+                    line-height: 22px;
+                    color: #666;
+                }
+                .wrap-contact {
+                    @include cus-flex;
+                    .icon--cir {
+                        line-height: 32px;
+                        text-align: center;
+                        border-radius: 50%;
+                    }
+                    .phone {
+                        width: 50%;
+                        .icon--cir {
+                            border: 2px solid $s-red;
+                        }
+                    }
+                    .live-chat {
+                        width: 50%;
+                        .icon--cir {
+                            border: 2px solid $c-green;
+                        }
+                    }
+                }
+            }
+            .loading-your-fees {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                background: rgb(255 255 255 / 67%);
+                transform: translate(-50%, -50%);
+                width: 100%;
+                height: 100%;
+                border-radius: 8px;
+                z-index: 1;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                .lds-ellipsis {
+                    display: inline-block;
+                    position: relative;
+                    width: 80px;
+                    height: 80px;
+                }
+                .lds-ellipsis div {
+                    position: absolute;
+                    top: 33px;
+                    width: 13px;
+                    height: 13px;
+                    border-radius: 50%;
+                    background: $c-green;
+                    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+                }
+                .lds-ellipsis div:nth-child(1) {
+                    left: 8px;
+                    animation: lds-ellipsis1 0.6s infinite;
+                }
+                .lds-ellipsis div:nth-child(2) {
+                    left: 8px;
+                    animation: lds-ellipsis2 0.6s infinite;
+                }
+                .lds-ellipsis div:nth-child(3) {
+                    left: 32px;
+                    animation: lds-ellipsis2 0.6s infinite;
+                }
+                .lds-ellipsis div:nth-child(4) {
+                    left: 56px;
+                    animation: lds-ellipsis3 0.6s infinite;
+                }
+                @keyframes lds-ellipsis1 {
+                    0% {
+                        transform: scale(0);
+                    }
+                    100% {
+                        transform: scale(1);
+                    }
+                }
+                @keyframes lds-ellipsis3 {
+                    0% {
+                        transform: scale(1);
+                    }
+                    100% {
+                        transform: scale(0);
+                    }
+                }
+                @keyframes lds-ellipsis2 {
+                    0% {
+                        transform: translate(0, 0);
+                    }
+                    100% {
+                        transform: translate(24px, 0);
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/* End component style Calculate your Visa Fees */
+
+
+/* Begin component style Check requirement */
+
+.__short-btn-check {
+    margin-top: 24px;
+    .__short-search {
+        display: flex;
+        flex-wrap: nowrap;
+        width: 65%;
+        @include mobile {
+            width: 100%;
+        }
+        .wrap-ip-search {
+            border: 1px solid #d8d8d8;
+            border-right: 0;
+            padding: 11px 30px 11px 16px;
+            width: 100%;
+            border-radius: 4px 0 0 4px;
+            position: relative;
+            .__t-search {
+                border: none;
+                width: 100%;
+            }
+            .icon-topbar-arrow {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                right: 11px;
+            }
+            .__list-req-emb {
+                max-height: 290px;
+                background-color: #fff;
+                border-radius: 8px;
+                box-shadow: 0 0 0 1px rgba(68, 68, 68, .11);
+                box-sizing: border-box;
+                margin-top: 3px;
+                opacity: 0;
+                overflow: auto;
+                padding: 0;
+                pointer-events: none;
+                position: absolute;
+                top: 100%;
+                max-height: 260px;
+                left: 0;
+                -webkit-transform-origin: 50% 0;
+                -ms-transform-origin: 50% 0;
+                transform-origin: 50% 0;
+                -webkit-transform: scale(0.75) translateY(-21px);
+                -ms-transform: scale(0.75) translateY(-21px);
+                transform: scale(0.75) translateY(-21px);
+                -webkit-transition: all .2s cubic-bezier(0.5, 0, 0, 1.25), opacity .15s ease-out;
+                transition: all .2s cubic-bezier(0.5, 0, 0, 1.25), opacity .15s ease-out;
+                z-index: 9;
+                width: 100%;
+                &::-webkit-scrollbar {
+                    width: 3px;
+                }
+                &::-webkit-scrollbar-thumb {
+                    background: $c-green;
+                }
+                li {
+                    list-style: none;
+                    padding: 8px 16px;
+                    cursor: pointer;
+                }
+            }
+        }
+        .wrap-ip-search.open {
+            .__list-req-emb {
+                opacity: 1;
+                pointer-events: auto;
+                -webkit-transform: scale(1) translateY(0);
+                -ms-transform: scale(1) translateY(0);
+                transform: scale(1) translateY(0);
+            }
+        }
+        .btn-shor-check {
+            border-radius: 0 4px 4px 0;
+            padding: 11px 23px;
+            @include cus-flex;
+            color: #fff;
+            .mb-rqm {
+                @include mobile {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+
+/* End component style Check requirement */
+
+
+/* Begin component style home typical partners */
+
+.__vnvisa-partners-full-w {
+    background: $s-white-blue;
+    padding: 48px 0;
+    margin-top: 64px;
+    @include mobile {
+        margin-top: 48px;
+    }
+    .service-title {
+        text-align: center;
+    }
+    .list-partners-full-w {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 32px;
+        img {
+            margin-bottom: 32px;
+            margin-right: 30px;
+            &:nth-of-type(6) {
+                margin-right: 0;
+            }
+            &:last-child {
+                margin-right: 0;
+            }
+            &:nth-of-type(n+7) {
+                margin-bottom: 0;
+            }
+        }
+        @include mobile {
+            display: none;
+        }
+    }
+}
+
+@include desktop {
+    .list-partners-mb {
+        display: none;
+    }
+}
+
+@include mobile {
+    .list-partners-mb {
+        .item {
+            img {
+                margin-bottom: 16px;
+            }
+        }
+    }
+}
+
+// no full width
+.__vnvisa-partners-no-fullw {
+    margin-top: 32px;
+    .col-lg-12 {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .list-partners-no-fullw {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        margin-top: 24px;
+        img {
+            margin-bottom: 30px;
+            margin-right: 30px;
+            width: 160px;
+            height: auto;
+            &:nth-of-type(n+9) {
+                margin-bottom: 0 !important;
+            }
+        }
+        @include mobile {
+            display: none;
+        }
+    }
+}
+
+
+/* End component style home typical partners */
+
+
+/* Begin component style home What our clients say */
+
+.__vnvisa-client-say {
+    margin-top: 64px;
+    @include mobile {
+        margin-top: 48px;
+        .client-say-des {
+            display: none;
+        }
+        .rplg-col-3 {
+            margin: 0 !important;
+            margin-bottom: 16px !important;
+            &:last-child {
+                margin-bottom: 0 !important;
+            }
+            @include mobile {
+                width: 100% !important;
+            }
+        }
+    }
+    .client-say-des {
+        width: 76%;
+        margin: auto;
+    }
+    .list-client-say {
+        .rplg {
+            .rplg-review-name {
+                color: $n-black !important;
+            }
+        }
+        .rplg-stars {
+            path {
+                fill: #FC713F;
+            }
+        }
+        .rplg .rplg-review-time {
+            color: $n-dark-gray !important;
+        }
+        .rplg .rplg-review-text {
+            color: $n-dark-gray !important;
+            line-height: 22px !important;
+        }
+        .rplg .rplg-social-logo.rplg-facebook-logo svg {
+            background-color: #009EEB!important;
+        }
+        .rplg .rplg-social-logo svg {
+            border-radius: 4px !important;
+        }
+        @media (min-width: 840px) {
+            .rplg-grid {
+                .rplg-grid-row {
+                    justify-content: space-between;
+                    .rplg-col-3 {
+                        // margin: 0 !important;
+                    }
+                    .rplg-col-2 {
+                        margin: 0 !important;
+                        margin-bottom: 24px !important;
+                        &:nth-child(n+5) {
+                            margin-bottom: 0 !important;
+                        }
+                    }
+                }
+            }
+        }
+        @media (max-width: 479px) {
+            .rplg-col-2 {
+                margin: 0 !important;
+                margin-bottom: 16px !important;
+                width: 100% !important;
+                &:last-child {
+                    margin-bottom: 0 !important;
+                }
+            }
+        }
+        .rplg .rplg-box {
+            margin: 0 !important;
+            height: 100%;
+            .rplg-box-content {
+                height: 176px !important;
+            }
+        }
+    }
+    .other-container {
+        .wrap-title-client-say {
+            text-align: left !important;
+            margin-bottom: 24px !important;
+            .client-say-title {
+                font-size: 24px;
+                line-height: 32px;
+            }
+        }
+        .btn-client-say {
+            text-align: left !important;
+        }
+    }
+}
+
+.other-clien-say {
+    margin-top: 32px;
+}
+
+
+/* End component style home What our clients say */
+
+
+/* Begin component style list */
+
+.__shor-list-horizontal {
+    ul {
+        margin: 0 !important;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        padding-inline-start: 0 !important;
+        li {
+            width: 50%;
+            list-style: none;
+            padding: 4px 0;
+            padding-left: 20px !important;
+            @include cus-flex;
+            position: relative;
+            &::before {
+                position: absolute;
+                content: "\e942";
+                color: #2cd1a0;
+                font-family: 'icomoon' !important;
+                left: 0;
+            }
+        }
+    }
+}
+
+.__shor-list-vertical {
+    ul {
+        margin: 0 !important;
+        padding: 0;
+        padding-inline-start: 0 !important;
+        li {
+            list-style: none;
+            padding: 4px 0;
+            padding-left: 20px !important;
+            @include cus-flex;
+            position: relative;
+            &::before {
+                position: absolute;
+                content: "\e942";
+                color: #2cd1a0;
+                font-family: 'icomoon' !important;
+                left: 0;
+            }
+        }
+    }
+}
+
+
+/* End component style list */
+
+
+/* Begin component style list number */
+
+.__shor-list-number {
+    counter-reset: section;
+}
+
+.list-nb {
+    padding: 8px 0;
+    overflow: hidden;
+    // &::before {
+    // 	counter-increment: section;
+    // 	content: counter(section);
+    // 	width: 32px;
+    // 	height: 32px;
+    // 	display: inline-block;
+    // 	text-align: center;
+    // 	line-height: 32px;
+    // 	background: linear-gradient(135deg, #009EEB 0.42%, #1167B1 100%);
+    // 	border-radius: 50%;
+    // 	color: #fff;
+    // 	margin-right: 16px;
+    // 	float: left;
+    // }
+    .wrap-list-nb {
+        overflow: hidden;
+        .des-list-nb {
+            p {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+
+/* End component style list number*/
+
+
+/* Begin component style our milestones */
+
+.__shor-our-milestones {
+    .time-line {
+        position: relative;
+        &::before {
+            position: absolute;
+            content: '';
+            width: 1px;
+            height: 100%;
+            background: #d8d8d8;
+            left: 76px;
+            z-index: -1;
+            @include mobile {
+                left: 4px;
+            }
+        }
+        .oneline {
+            display: flex;
+            align-items: baseline;
+            margin: 16px 0;
+            flex-wrap: wrap;
+            .year {
+                width: 40px;
+                @include mobile {
+                    display: none;
+                }
+            }
+            .musty {
+                width: 9px;
+                height: 9px;
+                background: #DF1E26;
+                border-radius: 50%;
+                margin: 0 32px;
+                @include mobile {
+                    margin: 0 16px 0 0;
+                }
+            }
+            .content {
+                width: calc(100% - 140px);
+                @media (max-width: 576px) {
+                    width: calc(100% - 40px);
+                }
+            }
+            &:first-child {
+                position: relative;
+                &::before {
+                    position: absolute;
+                    content: "";
+                    width: 1px;
+                    height: 9px;
+                    background: #fff;
+                    left: 76px;
+                    top: 0;
+                    @include mobile {
+                        left: 4px;
+                    }
+                }
+            }
+            &:last-child {
+                position: relative;
+                &::before {
+                    position: absolute;
+                    content: "";
+                    width: 1px;
+                    height: calc(100% - 18px);
+                    background: #fff;
+                    left: 76px;
+                    bottom: 0;
+                    @include mobile {
+                        left: 4px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/* End component style our milestones*/
+
+
+/* Begin component style button */
+
+// chat online now
+.__shor-btn-chat-online {
+    margin-top: 24px;
+    @include cus-flex;
+    .text-chat {
+        // margin-right: 16px;
+    }
+}
+
+.__shor-btn-booknow {
+    margin-top: 24px;
+    @include cus-flex;
+    .btn-book-now {
+        // margin-right: 32px;
+    }
+    .read-more {
+        position: relative;
+        padding-right: 18px;
+        &::before {
+            position: absolute;
+            content: "\e932";
+            color: $c-green;
+            font-family: 'icomoon' !important;
+            right: 0;
+        }
+    }
+}
+
+.__shor-btn-send-req {
+    margin-top: 24px;
+    @include cus-flex;
+}
+
+.__shor-btn-apply {
+    margin-top: 24px;
+    @include cus-flex;
+    .btn-apply {
+        // margin-right: 24px;
+    }
+}
+
+
+/* End component style button*/
+
+
+/* Begin component contact us */
+
+.wrap-contact-us {
+    .block-contact {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        @include mobile {
+            display: block;
+        }
+        .info-contact {
+            width: 50%;
+            @include mobile {
+                width: 100%;
+            }
+            ul {
+                margin: 0;
+                padding: 0;
+                li {
+                    list-style: none;
+                    padding: 12px 0;
+                    .w--icon {
+                        display: inline-block;
+                        margin-right: 16px;
+                    }
+                    .icon-sidebar-email {
+                        &::before {
+                            color: $c-green;
+                        }
+                    }
+                }
+            }
+        }
+        .form-contact {
+            width: 370px;
+            padding: 0 32px;
+            @include mobile {
+                width: 100%;
+                padding: 0;
+                margin-top: 24px;
+            }
+            .form-group {
+                display: grid;
+                label {
+                    margin-bottom: 4px;
+                    font-size: 14px;
+                    line-height: 22px;
+                }
+                input {
+                    height: 48px;
+                    border-color: #d8d8d8;
+                }
+            }
+            .form-message {
+                font-size: 14px;
+                line-height: 22px;
+                padding: 4px 0 0;
+            }
+            .form-group.invalid .form-control {
+                border-color: #f33a58;
+            }
+            .form-group.invalid .form-message {
+                color: #f33a58;
+            }
+        }
+        .wrap-btn {
+            position: relative;
+            .loading-contact {
+                position: absolute;
+                content: '';
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: #009eeb;
+                z-index: 2;
+                display: none;
+                align-items: center;
+                justify-content: center;
+                border-radius: 4px;
+            }
+        }
+    }
+}
+
+
+/* End component contact us*/
+
+
+/* Begin component heading customize*/
+
+.__shor-hd-customize {
+    @include cus-flex;
+    .hd-number {
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        display: inline-block;
+        background: $g-blue;
+        color: $n-white;
+        margin-right: 16px;
+        border-radius: 50%;
+    }
+    .hd-text {
+        font-size: 24px;
+        line-height: 32px;
+        font-weight: bold;
+    }
+}
+
+
+/* End component customize*/
+
+
+/* Begin component embassies */
+
+.visa-embassy {
+    margin-top: 32px;
+    .table-row {
+        border-bottom: 1px solid #d8d8d8;
+        margin-top: 24px;
+        &:first-child {
+            margin-top: 0 !important;
+        }
+    }
+    .Upper {
+        width: 33%;
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 32px;
+    }
+    .chess-country {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        .item-chess {
+            width: calc(100% / 3);
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            @media (max-width: 576px) {
+                width: calc(100% / 2);
+            }
+            img {
+                width: 20px;
+                height: 14px;
+                object-fit: cover;
+                margin-right: 6px;
+            }
+        }
+    }
+}
+
+
+/* End component embassies */
+
+
+/* Begin component embassies city*/
+
+.__shor-embassy-city {
+    display: flex;
+    flex-wrap: wrap;
+    .info-embassy {
+        width: 49%;
+        margin-right: 1%;
+        .title-ebs {
+            margin-top: 0;
+            margin-bottom: 16px;
+            @include display-limit-2(2);
+            a {
+                color: $n-black !important;
+            }
+        }
+        ul {
+            margin: 0;
+            padding: 0;
+            li {
+                list-style: none;
+                padding: 4px 0;
+                // display: flex;
+                span {
+                    display: block;
+                }
+                .lb-info {
+                    float: left;
+                    width: 20%;
+                }
+                .v-info {
+                    overflow: hidden;
+                    @include display-limit-2(2);
+                }
+            }
+        }
+    }
+    .map {
+        @extend .info-embassy;
+        margin-left: 1%;
+        margin-right: 0;
+        iframe {
+            width: 100%;
+            height: 246px;
+        }
+    }
+}
+
+
+/* End component embassies city*/
+
+
+/* Begin component clients say*/
+
+.__shor-clients-rv {
+    .wrap-clientrv {
+        margin-top: 24px;
+        display: flex;
+        img {
+            width: 270px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-right: 30px;
+        }
+        .info-client-rv {
+            .client-title {
+                @include display-limit-2(2);
+            }
+            .client-des {
+                @include display-limit-2(4);
+            }
+        }
+    }
+}
+
+
+/* End component clients say*/
+
+
+/* Begin component Type of visa*/
+
+.__shor-type-of-visa {
+    .tb-requi {
+        table {
+            width: 456px;
+            tr {
+                td {
+                    text-align: center;
+                    &:first-child {
+                        text-align: left;
+                    }
+                }
+            }
+        }
+    }
+    .tb-other {
+        table {
+            width: 592px;
+            tr {
+                td {
+                    text-align: center;
+                    &:first-child {
+                        text-align: left;
+                    }
+                }
+            }
+        }
+    }
+    .table-bordered td {
+        border-color: #d8d8d8 !important;
+    }
+    tbody {
+        tr {
+            &:first-child {
+                background: #F0F7FD;
+            }
+        }
+    }
+}
+
+
+/* End component Type of visa*/
+
+
+/* Begin component list country*/
+
+.__shor-list-country {
+    margin-top: 32px;
+    .tab-mobile {
+        display: none;
+    }
+    .head-table {
+        height: 60px;
+        line-height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .tab-active {
+        border-bottom: 4px solid $c-green;
+        color: $c-green;
+    }
+    .tab-active-mb {
+        border-bottom: 4px solid $c-green;
+        color: $c-green;
+    }
+    .most-p {
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        user-select: none;
+    }
+    table thead tr {
+        height: 48px;
+        background: #F0F6FF;
+    }
+    table thead tr th {
+        width: 192px;
+        text-align: left;
+        padding: 10px 18px;
+    }
+    tbody tr td {
+        padding: 10px 18px;
+        line-height: 25px;
+    }
+    @include mobile {
+        .tab-mobile {
+            display: block;
+            .tab-country {
+                display: flex;
+                align-items: center;
+                .most-p {
+                    line-height: 48px;
+                }
+                .p1 {
+                    margin-right: 32px;
+                }
+            }
+        }
+        .head-table {
+            display: none !important;
+        }
+        table {
+            width: 800px;
+        }
+    }
+}
+
+
+/* End component list country*/
+
+
+/* Begin component table price*/
+
+.__shor-table-price {
+    .head-table {
+        align-items: center;
+        margin-bottom: 4px;
+        @include mobile {
+            flex-wrap: wrap;
+            .show-for {
+                width: 100%;
+            }
+        }
+        .tab-active {
+            color: $c-green;
+            position: relative;
+            &::before {
+                position: absolute;
+                content: '';
+                top: 100%;
+                width: 100%;
+                height: 4px;
+                background: $c-green;
+                border-radius: 4px 4px 0 0;
+            }
+        }
+        .most-p {
+            font-weight: bold;
+            cursor: pointer;
+            padding: 8px 0;
+            margin-left: 32px;
+            @include mobile {
+                margin-left: 0;
+                margin-right: 32px;
+            }
+        }
+    }
+    table {
+        thead {
+            tr {
+                background: #F0F7FD;
+                th {
+                    width: 192px;
+                    text-align: left;
+                    border-bottom-width: 0;
+                }
+            }
+        }
+        @include mobile {
+            width: 600px;
+        }
+    }
+    .w-30 {
+        width: 300px !important;
+    }
+    .table-c-tourist {
+        ul {
+            margin: 0;
+            padding-left: 32px;
+            li {
+                padding: 4px 0;
+            }
+        }
+    }
+}
+
+
+/* End component table price*/
+
+
+/* begin component search home page*/
+
+@include mobile {
+    .wrap-search {
+        margin-top: 0;
+    }
+    .btn-requirement {
+        .rqm--mb {
+            display: none;
+        }
+    }
+    .list-nationa {
+        position: absolute;
+        background: #fff;
+        width: 100%;
+        /* max-height: 73%; */
+        left: 0;
+        margin-top: 23px;
+        top: 101%;
+        margin: 0;
+        padding: 20px 25px 20px;
+        z-index: 9;
+        border-radius: 10px;
+        overflow: auto;
+        transform: translateY(100%);
+        transition: .4s;
+        text-align: left;
+        display: none;
+        li {
+            list-style: none;
+            padding: 12px 0;
+        }
+    }
+}
+
+
+/* end component search home page*/
+
+
+/* begin component readmore*/
+
+.shor__readmore {
+    border: 1px solid #d8d8d8;
+    border-radius: 4px;
+    padding: 11px 24px;
+    p {
+        margin: 0;
+    }
+}
+
+
+/* end component readmore*/

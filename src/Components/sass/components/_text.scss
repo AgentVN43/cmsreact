@@ -1,0 +1,92 @@
+
+/* 
+    @ website : vietnam-visa.vn
+    @ version : 4.0
+    @ Deployment date : 09/09/2020
+    @ Team : Front end develop VNB
+*/
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+@import "../abstracts/functions";
+
+//----------class for text color
+.c-red {color: $c-red};
+.c-blue-dark {color: $c-blue-dark};
+.c-green {color: $c-green};
+
+.s-red {color: $s-red};
+.s-yellow {color: $s-yellow};
+.s-green {color: $s-green};
+.s-white-blue {color: $s-white-blue};
+
+.n-black {color: $n-black};
+.n-dark-gray {color: $n-dark-gray};
+.n-silver {color: $n-silver};
+.n-light-gray {color: $n-light-gray};
+.n-smoke {color: $n-silver};
+.n-white {color: $n-white};
+
+//----------class for weight
+
+.font-w-bold {
+    font-weight: $font-w-b;
+}
+.font-w-semibold {
+    font-weight: $font-w-semibold;
+}
+.font-w-regular {
+    font-weight: $font-w-regular;
+}
+
+.txt-10-14 {
+    font-size: $fs-10;
+    line-height: $line-h-14;
+}
+.txt-14-22 {
+    font-size: $fs-14;
+    line-height: $line-h-22;
+}
+.txt-16-26 {
+    font-size: $fs-16;
+    line-height: $line-h-26;
+}
+.txt-14-22-smb {
+    font-size: $fs-14;
+    line-height: $line-h-22;
+    font-weight: $font-w-semibold;
+}
+.txt-16-26-smb {
+    font-size: $fs-16;
+    line-height: $line-h-26;
+    font-weight: $font-w-semibold;
+}
+.txt-20-28 {
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: bold;
+}
+.hd-5 {
+    font-size: $fs-14;
+    line-height: $line-h-22;
+    font-weight: $font-w-semibold;
+}
+.hd-4 {
+    font-size: $fs-16;
+    line-height: $line-h-26;
+    font-weight: $font-w-semibold;
+}
+.hd-3{
+    font-size: $fs-20;
+    line-height: $line-h-28;
+    font-weight: $font-w-b;
+}
+.hd-2{
+    font-size: $fs-24;
+    line-height: $line-h-32;
+    font-weight: $font-w-b;
+}
+.hd-1{
+    font-size: $fs-32;
+    line-height: $line-h-40;
+    font-weight: $font-w-b;
+}

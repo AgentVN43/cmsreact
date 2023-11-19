@@ -1,0 +1,836 @@
+/* 
+    @ website : vietnam-visa.vn
+    @ version : 4.0
+    @ Deployment date : 14/09/2020
+    @ Team : Front end develop VNB
+*/
+
+// Cấu trúc css được chia thành các component
+// Mỗi component sẽ quản lý 1 vùng giao diện
+
+/* Component style home background*/
+
+@import "../abstracts/mixins";
+@import "../abstracts/functions";
+@import "../abstracts/variables";
+
+
+@media (min-width: 768px) {
+    .__wraper-banner>.container {
+        margin-top: -50px;
+        
+    }
+}
+
+@media (min-width: 480px) and (max-width: 1023px) {
+    .__wraper-banner {
+        .__home-search {
+            .wrap-search {
+                display: none;
+            }
+        }
+    }
+}
+
+@media (min-width: 1280px) {
+    .__wraper-banner>.container {
+        max-width: 1280px;
+        padding: 0;
+        .home-title {
+            font-size: 38px;
+        }
+        .home-des {
+            margin-top: 20px;
+        }
+    }
+}
+
+
+.banner--bg {
+    // background: url('../images/img_banner.jpg') no-repeat center center;
+    // background-size: cover;
+    height: 500px;
+    position: relative;
+    z-index: 2;
+    @include cus-flex;
+    justify-content: center;
+    background-position: center center;
+    background-size: cover;
+    @include mobile {
+        height: 400px;
+    }
+    ._img-bg {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -2;
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+    &::before {
+        position: absolute;
+        content: '';
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: -1;
+    }
+    .col-lg-12 {
+        position: static;
+    }
+    .__home-title {
+        width: 692px;
+        text-align: center;
+        color: $n-white;
+        margin: auto;
+        @include mobile {
+            width: 100%;
+            font-size: 24px;
+            line-height: 32px;
+        }
+    }
+    .__home-search {
+        text-align: center;
+        color: $n-white;
+        @include mobile {
+            width: 100%;
+            .home-title {
+                font-size: 26px;
+                line-height: 32px;
+                margin-bottom: 0;
+            }
+            .home-des {
+                display: none;
+            }
+        }
+        .__vnvisa-search {
+            background: $n-white;
+            color: $n-black;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 11px 10px 24px;
+            border-radius: 12px;
+            position: relative;
+            width: 480px;
+            margin: auto;
+            @include mobile {
+                position: static;
+                width: 100%;
+            }
+            .search-nationality {
+                width: 100%;
+                label {
+                    font-size: 10px;
+                    line-height: 14px;
+                    text-align: left;
+                    display: block;
+                    margin: 0;
+                }
+                input {
+                    width: 100%;
+                    border: none;
+                    padding-right: 15px;
+                    &::placeholder {
+                        font-size: 14px;
+                        line-height: 22px;
+                    }
+                }
+            }
+            .btn-start {
+                font-size: 14px;
+                line-height: 22px;
+                box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+                border-radius: 8px;
+                &:hover:before {
+                    border-radius: 8px;
+                }
+                &:hover {
+                    color: $n-white;
+                }
+            }
+            @include desktop {
+                .list-nationa {
+                    max-height: 290px;
+                    background-color: #fff;
+                    border-radius: 8px;
+                    box-shadow: 0 0 0 1px rgba(68, 68, 68, .11);
+                    box-sizing: border-box;
+                    margin-top: 2px;
+                    margin-bottom: 0;
+                    opacity: 0;
+                    overflow: auto;
+                    padding: 0;
+                    pointer-events: none;
+                    position: absolute;
+                    top: 100%;
+                    max-height: 260px;
+                    left: 0;
+                    -webkit-transform-origin: 50% 0;
+                    -ms-transform-origin: 50% 0;
+                    transform-origin: 50% 0;
+                    -webkit-transform: scale(0.75) translateY(-21px);
+                    -ms-transform: scale(0.75) translateY(-21px);
+                    transform: scale(0.75) translateY(-21px);
+                    -webkit-transition: all .2s cubic-bezier(0.5, 0, 0, 1.25), opacity .15s ease-out;
+                    transition: all .2s cubic-bezier(0.5, 0, 0, 1.25), opacity .15s ease-out;
+                    z-index: 9;
+                    width: 100%;
+                    li {
+                        list-style: none;
+                        text-align: left;
+                        padding: 4px 24px;
+                        cursor: pointer;
+                    }
+                }
+            }
+            .list-nationa::-webkit-scrollbar {
+                display: none;
+            }
+            /* Hide scrollbar for IE and Edge */
+            .list-nationa {
+                -ms-overflow-style: none;
+            }
+            @include mobile {}
+        }
+        @include desktop {
+            .open .list-nationa {
+                opacity: 1;
+                pointer-events: auto;
+                -webkit-transform: scale(1) translateY(0);
+                -ms-transform: scale(1) translateY(0);
+                transform: scale(1) translateY(0);
+            }
+        }
+    }
+}
+/* Component style home slide info*/
+
+.__vnvisa-slide-info {
+    background: linear-gradient(180deg, #009EEB 0.42%, #1167B1 100%);
+    color: $n-white;
+    padding: 32px 0;
+    @include desktop {
+        .owl-stage {
+            @include cus-flex;
+            justify-content: center;
+            width: 100% !important;
+            .owl-item {
+                width: auto !important;
+                &:last-child {
+                    margin-right: 0 !important;
+                }
+            }
+        }
+    }
+    .visa-param {
+        font-size: 40px;
+        line-height: 56px;
+        font-weight: bold;
+        @include mobile {
+            font-size: 32px;
+            line-height: 40px;
+        }
+    }
+    @include mobile {
+        .owl-theme .owl-nav [class*=owl-]:hover {
+            color: $n-white!important;
+            text-decoration: none;
+        }
+        .owl-prev {
+            left: 0;
+            background: none !important;
+        }
+        .owl-next {
+            right: 0;
+            background: none !important;
+        }
+    }
+}
+
+
+/* End component style home slide info*/
+
+
+/* Component style home why vietnam-visa*/
+
+.__vnvisa-why {
+    @include mobile {
+        margin-top: 48px;
+    }
+    .resp-title {
+        @include mobile {
+            margin-bottom: 24px;
+        }
+    }
+    .why-content {
+        ul {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            li {
+                width: 50%;
+                list-style: none;
+                padding: 4px 0;
+                padding-left: 25px;
+                @include cus-flex;
+                position: relative;
+                &::before {
+                    position: absolute;
+                    content: "\e942";
+                    color: #2cd1a0;
+                    font-family: 'icomoon' !important;
+                    left: 0;
+                }
+            }
+        }
+        .read-more {
+            @include cus-flex;
+            user-select: none;
+            color: $c-green;
+            cursor: pointer;
+            .icon-arrow-long {
+                margin-left: 10px;
+            }
+        }
+        @include mobile {
+            margin-bottom: 24px;
+        }
+    }
+    .why-video {
+        iframe {
+            @include mobile {
+                width: 100%;
+            }
+        }
+    }
+}
+
+
+/* End component style home why vietnam-visa*/
+
+
+/* Begin component style home how to apply */
+
+.__vnvisa-apply {
+    margin-top: 64px;
+    .wrap-apply {
+        img {
+            width: auto !important;
+            margin: auto;
+        }
+        @include desktop {
+            .owl-stage {
+                width: 100% !important;
+                display: flex;
+                justify-content: center;
+                .owl-item {
+                    width: 270px !important;
+                    &:last-child {
+                        margin-right: 0 !important;
+                    }
+                }
+            }
+        }
+    }
+    @include mobile {
+        margin-top: 48px;
+        .__apply-item {
+            h3 {
+                font-size: 18px;
+                line-height: 28px;
+            }
+        }
+        .wrap-steps {
+            padding: 24px 0 !important;
+            .owl-nav {
+                margin: 0;
+            }
+            .owl-prev {
+                left: 0;
+            }
+            .owl-next {
+                right: 0;
+            }
+        }
+    }
+}
+
+
+/* End component style home how to apply */
+
+
+/* Begin component style home Check your fees */
+
+.__vnvisa-fees {
+    background: $s-white-blue;
+    padding: 48px 0;
+    @include mobile {
+        margin-top: 48px;
+        .fees-des {
+            display: none;
+        }
+    }
+    &.__vnvisa-fees-no-w {
+        .__wrap-form-fees {
+            .fees-w {
+                @include mobile {
+                    width: 100%;
+                }
+            }
+        }
+        .fee-service {
+            @include mobile {
+                margin-left: 0%;
+                width: 100%;
+                margin-top: 32px;
+            }
+        }
+    }
+    .__wrap-form-fees {
+        @include cus-flex;
+        flex-wrap: wrap;
+        .fees-w {
+            width: 49%;
+            @include mobile {
+                width: 100%;
+            }
+        }
+        .form-fees {
+            @include mobile {
+                margin-right: 0;
+            }
+            .form-group {
+                margin-bottom: 32px;
+                &:last-child {
+                    margin-bottom: 0;
+                }
+                @include mobile {
+                    margin-bottom: 24px;
+                }
+            }
+            margin-right: 1%;
+            .fee--sl {
+                @include cus-flex;
+                justify-content: flex-end;
+                label {
+                    margin-right: 14px;
+                }
+                @include mobile {
+                    width: 100%;
+                    label {
+                        display: none;
+                    }
+                }
+            }
+            select {
+                width: 300px;
+                height: 48px;
+                border-color: $n-light-gray;
+                padding-left: 18px;
+                padding-right: 42px;
+                appearance: none;
+                background: url(../images/arow-d.png) no-repeat right 16px center;
+                cursor: pointer;
+                border-radius: 8px;
+                @include mobile {
+                    width: 100%;
+                }
+            }
+            .nice-select {
+                @include mobile {
+                    max-width: 100%;
+                    width: 100%;
+                }
+                width: 300px;
+                max-width: 300px;
+                @include cus-flex;
+                height: 48px;
+                border-color: $n-light-gray;
+                .list {
+                    min-width: 100%;
+                    max-height: 300px;
+                    overflow: auto;
+                    box-shadow: 0 0 0 1px $n-light-gray;
+                }
+                &:focus {
+                    outline: none !important;
+                    box-shadow: none !important;
+                    border-color: $n-light-gray;
+                }
+                &::after {
+                    display: none;
+                }
+                &::before {
+                    position: absolute;
+                    right: 16px;
+                    content: "\e928";
+                    font-family: 'icomoon' !important;
+                    transition: all 0.2s;
+                }
+            }
+            .nice-select.open {
+                &::before {
+                    transform: rotate(180deg);
+                }
+            }
+            .sl-national {
+                .select2-container {
+                    height: 48px;
+                    display: flex;
+                    align-items: center;
+                    box-sizing: border-box;
+                    padding-left: 18px;
+                    padding-right: 42px;
+                    border: 1px solid #d8d8d8;
+                    border-radius: 4px;
+                    background: url(../images/arow-d.png) no-repeat right 16px center;
+                    cursor: pointer;
+                    @include mobile {
+                        width: 100% !important;
+                    }
+                    &:focus {
+                        outline: none;
+                    }
+                    .selection {
+                        width: 100%;
+                        height: 100%;
+                        &:focus {
+                            outline: none;
+                        }
+                        .select2-selection {
+                            &:focus {
+                                outline: none;
+                            }
+                            display: block !important;
+                            width: 100%;
+                            height: 100% !important;
+                            border: none;
+                            .select2-selection__rendered {
+                                width: 100%;
+                                height: 100%;
+                                padding: 0;
+                                display: flex;
+                                align-items: center;
+                            }
+                            .select2-selection__arrow {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .fee-service {
+            @include mobile {
+                margin-left: 0%;
+                width: 100%;
+                margin-top: 32px;
+            }
+            position: relative;
+            margin-left: 1%;
+            @include cus-border(8px);
+            width: 370px;
+            background: $n-white;
+            .fee-normal {
+                hr {
+                    margin: 32px 0;
+                }
+                padding: 32px;
+                text-align: center;
+                .service-price {
+                    font-weight: bold;
+                    font-size: 20px;
+                    line-height: 28px;
+                    margin-bottom: 8px;
+                    .price {
+                        font-size: 32px;
+                        line-height: 40px;
+                        color: $c-red;
+                    }
+                }
+                .price-description {
+                    font-size: 14px;
+                    line-height: 22px;
+                    color: #666;
+                }
+            }
+            .fee-urgent {
+                hr {
+                    margin: 32px 0;
+                }
+                padding: 32px;
+                text-align: center;
+                .__shor-btn-send-req {
+                    margin-top: 14px;
+                }
+                .btn {
+                    width: 100% !important;
+                }
+                .wrap-contact {
+                    @include cus-flex;
+                    .icon--cir {
+                        line-height: 32px;
+                        text-align: center;
+                        border-radius: 50%;
+                    }
+                    .phone {
+                        width: 50%;
+                        .icon--cir {
+                            border: 2px solid $s-red;
+                        }
+                    }
+                    .live-chat {
+                        width: 50%;
+                        .icon--cir {
+                            border: 2px solid $c-green;
+                        }
+                    }
+                }
+            }
+            .fee-diff {
+                hr {
+                    margin: 32px 0;
+                }
+                padding: 32px;
+                text-align: center;
+                .service-price-diff {
+                    font-weight: bold;
+                    font-size: 20px;
+                    line-height: 28px;
+                    margin-bottom: 8px;
+                    .price {
+                        font-size: 32px;
+                        line-height: 40px;
+                        color: $c-red;
+                    }
+                }
+                .price-description-diff {
+                    font-size: 14px;
+                    line-height: 22px;
+                    color: #666;
+                }
+                .wrap-contact {
+                    @include cus-flex;
+                    .icon--cir {
+                        line-height: 32px;
+                        text-align: center;
+                        border-radius: 50%;
+                    }
+                    .phone {
+                        width: 50%;
+                        .icon--cir {
+                            border: 2px solid $s-red;
+                        }
+                    }
+                    .live-chat {
+                        width: 50%;
+                        .icon--cir {
+                            border: 2px solid $c-green;
+                        }
+                    }
+                }
+            }
+            .loading-your-fees {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                background: rgb(255 255 255 / 67%);
+                transform: translate(-50%, -50%);
+                width: 100%;
+                height: 100%;
+                border-radius: 8px;
+                z-index: 1;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                .lds-ellipsis {
+                    display: inline-block;
+                    position: relative;
+                    width: 80px;
+                    height: 80px;
+                }
+                .lds-ellipsis div {
+                    position: absolute;
+                    top: 33px;
+                    width: 13px;
+                    height: 13px;
+                    border-radius: 50%;
+                    background: $c-green;
+                    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+                }
+                .lds-ellipsis div:nth-child(1) {
+                    left: 8px;
+                    animation: lds-ellipsis1 0.6s infinite;
+                }
+                .lds-ellipsis div:nth-child(2) {
+                    left: 8px;
+                    animation: lds-ellipsis2 0.6s infinite;
+                }
+                .lds-ellipsis div:nth-child(3) {
+                    left: 32px;
+                    animation: lds-ellipsis2 0.6s infinite;
+                }
+                .lds-ellipsis div:nth-child(4) {
+                    left: 56px;
+                    animation: lds-ellipsis3 0.6s infinite;
+                }
+                @keyframes lds-ellipsis1 {
+                    0% {
+                        transform: scale(0);
+                    }
+                    100% {
+                        transform: scale(1);
+                    }
+                }
+                @keyframes lds-ellipsis3 {
+                    0% {
+                        transform: scale(1);
+                    }
+                    100% {
+                        transform: scale(0);
+                    }
+                }
+                @keyframes lds-ellipsis2 {
+                    0% {
+                        transform: translate(0, 0);
+                    }
+                    100% {
+                        transform: translate(24px, 0);
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/* End component style home Check your fees */
+
+
+/* Begin component style home our service */
+
+.__vnvisa-our-service {
+    .owl-service {
+        .item {
+            filter: drop-shadow(0px 0px 16px rgba(0, 0, 0, 0.1));
+        }
+        .owl-nav {
+            margin: 0;
+        }
+        .owl-prev,
+        .owl-next {
+            background-color: white !important;
+            width: 40px;
+            height: 40px;
+            border-radius: 50% !important;
+            line-height: 40px !important;
+            box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.1);
+            @media (min-width: 768px) {
+                top: 89px;
+            }
+        }
+    }
+    .wrap-title-service {
+        .service-des {
+            width: 76%;
+            margin: auto;
+        }
+    }
+    .visa-service-item {
+        a {
+            display: block;
+            &:hover {
+                color: $c-green;
+            }
+        }
+        img {
+            width: 270px;
+            height: 180px;
+            border-radius: 8px;
+            object-fit: cover;
+            @include mobile {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        .service-title {
+            margin: 16px 0 4px;
+            @include display-limit-2(2);
+            @include mobile {
+                margin: 8px 0;
+            }
+        }
+        .__service-des {
+            @include display-limit-2(4);
+            @include mobile {
+                @include display-limit-2(2);
+            }
+        }
+    }
+    @include mobile {
+        margin-top: 48px;
+        .owl-stage {
+            padding-left: 0 !important;
+        }
+        .service-des {
+            display: none;
+        }
+    }
+}
+
+
+/* End component style home our service */
+
+
+/* Begin component style home apply online */
+
+.__vnvisa-apply-online {
+    background: $n-smoke;
+    padding: 48px 0;
+    @include mobile {
+        margin-top: 48px;
+        .apply-des {
+            width: 100% !important;
+        }
+    }
+}
+.__vnvisa-apply-online + footer {
+    margin-top: 0 !important;
+}
+
+.wrap-title-apply {
+    .apply-des {
+        width: 50%;
+        margin: auto;
+    }
+}
+
+
+/* End component style home apply online */
+
+
+/* Begin component reponsive mobile*/
+
+@include mobile {
+    .resp-title {
+        font-size: 24px;
+        line-height: 32px;
+    }
+}
+
+
+/* And component reponsive mobile*/

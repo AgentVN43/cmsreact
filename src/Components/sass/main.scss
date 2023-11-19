@@ -1,0 +1,111 @@
+@import "abstracts/variables";
+@import "abstracts/functions";
+@import "abstracts/mixins";
+
+@import "vendors/owl.carousel.min";
+@import "vendors/owl.theme.default.min";
+@import "base/reset";
+@import "base/typography";
+
+@import "base/font";
+@import './../fonts/icovidi-v1.0/style.css'; // Icon Font: Vidi
+
+@import "layout/navigation";
+@import "layout/grid";
+@import "layout/header";
+@import "layout/header-menu";
+@import "layout/footer";
+@import "layout/sidebar";
+@import "layout/forms";
+@import "layout/_shortcode";
+@import "layout/_hook";
+@import "layout/_loading";
+@import "layout/_popup";
+@import "layout/_breadcrumb";
+@import "layout/_pagination";
+@import "components/buttons";
+@import "components/text";
+@import "components/carousel";
+@import "pages/home";
+@import "pages/about";
+@import "pages/blog";
+@import "pages/_check_status";
+@import "pages/_service";
+@import "themes/theme";
+@import "themes/admin";
+
+.modal {
+    z-index: 1050000000000000;
+}
+
+.modal-backdrop {
+    z-index: 10940;
+}
+.color-success {
+    color: #2cd1a0;
+}
+
+.color-danger {
+    color: #df1e26;
+}
+
+.page-id-28984
+    .__embassy
+    .container
+    .col-lg-8
+    .content-block
+    h2:nth-of-type(2) {
+    border: 1px solid #d8d8d8;
+    border-radius: 8px;
+    margin: 0;
+    margin-top: 20px;
+    border-bottom: none;
+    padding: 20px 0 15px 25px;
+    border-left-width: 8px;
+    border-left-color: #ffe187;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.page-id-28984
+    .__embassy
+    .container
+    .col-lg-8
+    .content-block
+    > ul:nth-of-type(2) {
+    margin: 0;
+    border: 1px solid #d8d8d8;
+    border-radius: 8px;
+    border-top: none;
+    border-left-width: 8px;
+    border-left-color: #ffe187;
+    padding-bottom: 15px;
+    padding-right: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.page-id-28794
+    .__embassy
+    .container
+    .col-lg-8
+    .content-block
+    > p:nth-of-type(17) {
+    padding-left: 25px !important;
+}
+
+.page-id-28984
+    .__embassy
+    .container
+    .col-lg-8
+    .content-block
+    > ul:nth-of-type(2)
+    li {
+    margin-left: 15px;
+}
+
+@media (max-width: 392px) {
+    .head-table {
+        line-height: 25px !important;
+    }
+}

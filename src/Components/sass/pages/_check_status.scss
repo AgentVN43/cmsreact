@@ -1,0 +1,27 @@
+
+/* Begin component check status*/
+.check_status_form {
+	width: 50%;
+    background: #F0F7FD;
+    padding: 32px;
+    border-radius: 4px;
+	label {
+		margin-bottom: 4px;
+	}
+	input {
+		height: 48px;
+		border-color: #d8d8d8;
+	}
+	input.bod-red {
+		border-color: $c-red !important;
+	}
+}
+.vnb-paynow {
+	cursor: pointer;
+	text-decoration: underline;
+}
+.vnb-download {
+	@extend .vnb-paynow;
+}
+
+/* End component check status*/

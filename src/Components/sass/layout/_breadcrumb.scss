@@ -1,0 +1,29 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+@import "../abstracts/functions";
+
+.wrap-breadcrumb {
+    padding: 13px 0;
+    margin: 16px 0;
+    ul {
+        margin: 0;
+        padding: 0;
+        @include cus-flex;
+        flex-wrap: wrap;
+        li {
+            list-style: none;
+            @include cus-flex;
+            font-size: 14px;
+            line-height: 22px;
+            a {
+                color: $c-green;
+            }
+            &:nth-child(even) {
+                padding: 0 8px;
+                span {
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+}

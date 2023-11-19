@@ -1,0 +1,287 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+@import "../abstracts/functions";
+@import "../base/font";
+
+// Cấu hình scroll body
+body::-webkit-scrollbar {
+    width: 8px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background: $c-green;
+}
+
+body::-webkit-scrollbar-thumb:window-inactive {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+// Cấu hình font
+body {
+    font-family: 'SVN-Airbnb';
+    color: $n-black;
+    @media (min-width: 1200px) {
+        .container {
+            max-width: 1200px;
+        }
+    }
+}
+
+h5 {
+    font-size: $fs-14;
+    line-height: $line-h-22;
+    font-weight: $font-w-semibold;
+}
+
+h4 {
+    font-size: $fs-16;
+    line-height: $line-h-26;
+    font-weight: $font-w-semibold;
+}
+
+h3 {
+    font-size: $fs-20;
+    line-height: $line-h-28;
+    font-weight: $font-w-b;
+}
+
+h2 {
+    font-size: $fs-24;
+    line-height: $line-h-32;
+    font-weight: $font-w-b;
+}
+
+h1 {
+    font-size: $fs-32;
+    line-height: $line-h-40;
+    font-weight: $font-w-b;
+}
+
+p {
+    margin-bottom: 8px;
+    font-size: $fs-16;
+    line-height: $line-h-26;
+}
+
+a {
+    text-decoration: none !important;
+    transition: color .2s ease;
+    color: $n-black;
+}
+
+// reset các thuộc tính mặc định 
+a:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+a {
+    transition: all 0.2s;
+    &:hover {
+        color: $c-green;
+    }
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+input:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+button:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+select:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+// remove arrow input number
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+// remove background input
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+
+
+/* Firefox */
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+
+/*Sử dụng cho thư viện Owl*/
+
+.owl-prev {
+    position: absolute;
+    top: 45%;
+    transform: translateY(-50%);
+    left: -25px;
+    font-size: 35px !important;
+    text-align: center;
+}
+
+.owl-next {
+    position: absolute;
+    top: 45%;
+    transform: translateY(-50%);
+    right: -25px;
+    font-size: 35px !important;
+    text-align: center;
+}
+
+.owl-theme .owl-nav [class*=owl-]:hover {
+    color: $n-black!important;
+    text-decoration: none;
+}
+
+.owl-theme .owl-dots .owl-dot.active span,
+.owl-theme .owl-dots .owl-dot:hover span {
+    background: #1FB6FF;
+}
+
+.owl-theme .owl-dots .owl-dot span {
+    background: #fff;
+    border: 1px solid #E6E6E6;
+}
+
+// dùng cho thư viện select 2
+.select2-container {
+    .select2-dropdown {
+        border-color: #d8d8d8 !important;
+    }
+}
+
+.shadow-lg {
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, .1)!important;
+}
+
+.txt1 {
+    font-weight: bold;
+    color: #1A1A1A;
+}
+
+.vold-table-price {
+    .table-c-business,
+    .table-c-tourist {
+        &.hide {
+            display: none;
+        }
+    }
+    .head-table {
+        height: 60px;
+        line-height: 50px;
+        color: #1A1A1A;
+    }
+    .show-for {
+        font-size: 16px;
+        font-weight: bold;
+    }
+    .tab-active {
+        border-bottom: 2px solid #0370a8;
+        color: #0370a8;
+    }
+    .most-p {
+        margin-left: 19px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    table {
+        box-shadow: 0px 7px 64px rgb(0 0 0 / 7%);
+    }
+    table thead tr {
+        height: 48px;
+        background: #F0F6FF;
+    }
+    table thead tr th {
+        width: 192px;
+        text-align: left;
+        padding: 10px 18px;
+    }
+    tbody tr:first-child {
+        background: white;
+    }
+    tbody tr:nth-child(2n) {
+        background: #F5F5F5;
+    }
+    tbody tr {
+        width: 157px;
+        height: 48px;
+        color: #333333;
+    }
+    tbody tr td {
+        padding: 10px 18px;
+        line-height: 25px;
+    }
+}
+
+.wp-block-table {
+    overflow-x: visible;
+    @media (max-width: 576px) {
+        overflow-x: auto;
+    }
+}
+
+figcaption,
+.wp-caption-text {
+    font-style: italic;
+    text-align: center;
+    padding-top: 7px;
+}
+
+blockquote {
+    font-family: Georgia, serif;
+    font-size: 16px;
+    font-style: italic;
+    width: 100%;
+    margin: .25em 0;
+    padding: .55em 40px;
+    line-height: 1.45;
+    position: relative;
+    color: #383838;
+    border-left: 3px dashed #c1c1c1;
+    background: #eee;
+}
+
+blockquote cite {
+    color: #999999;
+    font-size: 14px;
+    display: block;
+    margin-top: 5px;
+}
+
+blockquote cite:before {
+    content: "\2014 \2009";
+}
+
+.select2-container {
+    z-index: 100000000000000000; // khong duoc xoa di, xoa di la loi select 2:)))
+}
+
+.modal-dialog .select2-container {
+    z-index: 0 !important; // khong duoc xoa di, xoa di la loi select 2:)))
+}
+
+.btn.btn-danger {
+    color: #fff !important;
+}

@@ -1,0 +1,61 @@
+.__our-service {
+    .list-service {
+        display: flex;
+        flex-wrap: wrap;
+        @include mobile {
+            display: block;
+        }
+        .wrap-service {
+            width: calc(100% / 3 - 20px);
+            margin: 24px 0;
+            @include mobile {
+                width: 100%;
+                margin: 16px 0;
+            }
+            img {
+                width: 370px;
+                height: 246px;
+                object-fit: cover;
+                border-radius: 4px;
+                @include mobile {
+                    width: 100%;
+                }
+            }
+            .info-service {
+                .title-serv {
+                    font-weight: 500;
+                    font-size: 20px;
+                    line-height: 28px;
+                    margin: 16px 0 8px 0;
+                    display: block;
+                    @include display-limit-2(2);
+                }
+                .des-serv {
+                    font-size: 14px;
+                    line-height: 22px;
+                    @include display-limit-2(4);
+                }
+                .read-more {
+                    display: inline-block;
+                    margin-top: 8px;
+                    position: relative;
+                    &::before {
+                        position: absolute;
+                        content: "\e92a";
+                        color: $c-green;
+                        top: 50%;
+                        right: -18px;
+                        transform: translateY(-50%);
+                        font-family: 'icomoon' !important;
+                    }
+                }
+            }
+        }
+        .--serv-mg {
+            margin: 24px 30px;
+            @include mobile {
+                margin: 16px 0;
+            }
+        }
+    }
+}

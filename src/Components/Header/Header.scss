@@ -1,0 +1,472 @@
+/* 
+    @ website : vietnam-visa.vn
+    @ version : 4.0
+    @ Deployment date : 14/09/2020
+    @ Team : Front end develop VNB
+    */
+
+// Cấu trúc css được chia thành các component
+// Mỗi component sẽ quản lý 1 vùng giao diện
+
+/* Component cho cấu trúc header*/
+@import "../sass/abstracts/mixins";
+@import "../sass/abstracts/variables";
+@import "../sass/abstracts/functions";
+
+.__header {
+    box-shadow: 0px 0px 16px rgba(0, 0, 0, .1);
+    position: relative;
+    z-index: 9;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    transition: all .4s cubic-bezier(0.42, 0, 0.09, 1.04);
+}
+
+.__header.is-dir-down {
+    position: fixed;
+    z-index: 998;
+    @media (min-width: 768px) {
+        transform: translateY(-43px);
+    }
+}
+
+.__header {
+    .__english {
+        .wrap-english {
+            @include cus-flex;
+            cursor: pointer;
+            user-select: none;
+            
+            .en-arrow {
+                transition: all 0.2s;
+            }
+        }
+        
+        .sl-en {
+            background-color: #fff;
+            border-radius: 0 0 4px 4px;
+            box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+            margin-top: 10px;
+            opacity: 0;
+            overflow: hidden;
+            padding: 0;
+            pointer-events: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            -webkit-transform-origin: 50% 0;
+            -ms-transform-origin: 50% 0;
+            transform-origin: 50% 0;
+            -webkit-transform: scale(0.75) translateY(-21px);
+            -ms-transform: scale(0.75) translateY(-21px);
+            transform: scale(0.75) translateY(-21px);
+            -webkit-transition: all .2s cubic-bezier(0.5, 0, 0, 1.25), opacity .15s ease-out;
+            transition: all .2s cubic-bezier(0.5, 0, 0, 1.25), opacity .15s ease-out;
+            z-index: 9;
+            
+            li {
+                a {
+                    padding: 12px 16px;
+                    @include cus-flex;
+                    font-size: 14px;
+                    line-height: 22px;
+                    
+                    img {
+                        margin-right: 4px;
+                    }
+                }
+            }
+        }
+    }
+    
+    .__english.open {
+        .sl-en {
+            opacity: 1;
+            pointer-events: auto;
+            -webkit-transform: scale(1) translateY(0);
+            -ms-transform: scale(1) translateY(0);
+            transform: scale(1) translateY(0);
+        }
+        
+        .en-arrow {
+            transform: rotate(180deg);
+        }
+    }
+}
+
+@include desktop {
+    .__header-top {
+        padding: 9px 0;
+        border-bottom: 1px solid $n-light-gray;
+    }
+    .__left {
+        @include cus-flex;
+        
+        p {
+            span {
+                margin-right: 4px;
+            }
+        }
+        
+        .border-cik {
+            border: 1px solid $n-dark-gray;
+            padding: 2px;
+            border-radius: 50%;
+        }
+        
+        .head--fs {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            line-height: 22px;
+        }
+    }
+    .__right {
+        position: relative;
+        @include cus-flex;
+        justify-content: flex-end;
+        
+        ul {
+            padding: 0;
+            margin: 0;
+            
+            li {
+                list-style: none;
+            }
+        }
+        
+        .menu-login {
+            @include cus-flex;
+            
+            li {
+                padding-right: 24px;
+                
+                a {
+                    font-size: 14px;
+                    line-height: 22px;
+                }
+            }
+        }
+    }
+    .__main-header {
+        .__wrap-header {
+            @include cus-flex;
+            justify-content: space-between;
+            
+            .__main-menu-vnvisa {
+                @include cus-flex;
+                
+                ul {
+                    margin: 0;
+                    padding: 0;
+                    
+                    li {
+                        list-style: none;
+                        position: relative;
+                    }
+                }
+                
+                > ul {
+                    @include cus-flex;
+                    
+                    > li {
+                        padding: 23px 12px;
+                        
+                        > ul {
+                            display: none;
+                            position: absolute;
+                            background: #fff;
+                            transition: all .5s ease;
+                            z-index: 999;
+                            padding: 8px 16px;
+                            box-shadow: 0 0 24px rgba(0, 0, 0, .07);
+                            border-bottom-right-radius: 4px;
+                            border-bottom-left-radius: 4px;
+                            top: 100%;
+                            left: 0;
+                            min-width: 235px;
+                            
+                            > li {
+                                > a {
+                                    padding: 8px 0;
+                                    display: block;
+                                }
+                            }
+                        }
+                        
+                        > a {
+                            @include cus-flex;
+                            
+                            .menu-arrow {
+                                margin-left: 4px;
+                            }
+                        }
+                        
+                        &:hover {
+                            > ul {
+                                display: block;
+                            }
+                        }
+                    }
+                }
+                
+                .__header-apply {
+                    margin-left: 12px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .__header-top {
+        display: none;
+    }
+    .__main-header {
+        height: 60px;
+        display: flex;
+        align-items: center;
+        
+        .__wrap-header {
+            .__main-menu-vnvisa {
+                position: fixed;
+                top: 0;
+                z-index: 9;
+                background: #fff;
+                width: 80%;
+                right: 0%;
+                overflow: auto;
+                transition: all .3s ease;
+                transform: translateX(100%);
+                
+                .arrow-hide-menu {
+                    padding: 22px 24px;
+                    display: inline-block;
+                    
+                    &::before {
+                        color: $n-black;
+                    }
+                }
+                
+                ul {
+                    padding: 0;
+                    margin: 0;
+                    
+                    li {
+                        list-style: none;
+                        
+                        > ul {
+                            padding: 0 24px;
+                        }
+                    }
+                }
+                
+                .menu-vnvisa {
+                    padding: 12px 24px;
+                    
+                    li {
+                        a {
+                            padding: 12px 0;
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            
+                            .menu-arrow {
+                                transition: all 0.2s;
+                            }
+                        }
+                        
+                        a.reverse-arrow {
+                            font-weight: bold;
+                            
+                            .menu-arrow {
+                                transform: rotate(180deg);
+                            }
+                        }
+                    }
+                }
+                
+                .menu--mb {
+                    padding: 12px 24px;
+                    
+                    .wrap-login {
+                        @include cus-flex;
+                        justify-content: space-between;
+                        
+                        .menu-login {
+                            margin: 0;
+                            padding: 0;
+                            
+                            .check-status {
+                                display: none;
+                            }
+                        }
+                        
+                        .__english {
+                            position: relative;
+                        }
+                    }
+                }
+                
+                .__header-apply {
+                    padding: 12px 24px;
+                    
+                    .btn-apply {
+                        width: 100%;
+                    }
+                }
+            }
+            
+            .show-menu {
+                right: 0;
+                transform: translateX(0%);
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .__header-top {
+        padding: 9px 0;
+        border-bottom: 1px solid $n-light-gray;
+    }
+    .__left {
+        @include cus-flex;
+        
+        p {
+            span {
+                margin-right: 4px;
+            }
+        }
+        
+        .border-cik {
+            border: 1px solid $n-dark-gray;
+            padding: 2px;
+            border-radius: 50%;
+        }
+        
+        .head--fs {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            line-height: 22px;
+        }
+    }
+    .__right {
+        position: relative;
+        @include cus-flex;
+        justify-content: flex-end;
+        
+        ul {
+            padding: 0;
+            margin: 0;
+            
+            li {
+                list-style: none;
+            }
+        }
+        
+        .menu-login {
+            @include cus-flex;
+            
+            li {
+                padding-right: 24px;
+                
+                a {
+                    font-size: 14px;
+                    line-height: 22px;
+                }
+            }
+        }
+    }
+    .__main-header {
+        .__wrap-header {
+            @include cus-flex;
+            justify-content: space-between;
+            
+            .__main-menu-vnvisa {
+                @include cus-flex;
+                
+                ul {
+                    margin: 0;
+                    padding: 0;
+                    
+                    li {
+                        list-style: none;
+                        position: relative;
+                    }
+                }
+                
+                > ul {
+                    @include cus-flex;
+                    
+                    > li {
+                        padding: 23px 12px;
+                        
+                        > ul {
+                            display: none;
+                            position: absolute;
+                            background: #fff;
+                            transition: all .5s ease;
+                            z-index: 999;
+                            padding: 8px 16px;
+                            box-shadow: 0 0 24px rgba(0, 0, 0, .07);
+                            border-bottom-right-radius: 4px;
+                            border-bottom-left-radius: 4px;
+                            top: 100%;
+                            left: 0;
+                            min-width: 235px;
+                            
+                            > li {
+                                > a {
+                                    padding: 8px 0;
+                                    display: block;
+                                }
+                            }
+                        }
+                        
+                        > a {
+                            @include cus-flex;
+                            
+                            .menu-arrow {
+                                margin-left: 4px;
+                            }
+                        }
+                        
+                        &:hover {
+                            > ul {
+                                display: block;
+                            }
+                        }
+                    }
+                }
+                
+                .__header-apply {
+                    margin-left: 12px;
+                }
+            }
+        }
+    }
+}
+
+.header-here {
+    position: relative;
+    padding: 10px 0;
+    font-size: 14px;
+    text-align: center;
+    
+    a {
+        color: #007bff;
+    }
+    
+    @media (max-width: 767px) {
+        display: none;
+    }
+}
+
+.header-bar-text-apply {
+    background-color: #F0F7FD;
+}

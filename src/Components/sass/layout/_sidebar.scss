@@ -1,0 +1,687 @@
+/* 
+    @ website : vietnam-visa.vn
+    @ version : 4.0
+    @ Deployment date : 22/09/2020
+    @ Team : Front end develop VNB
+    */
+
+// Cấu trúc css được chia thành các component
+// Mỗi component sẽ quản lý 1 vùng giao diện
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+@import "../abstracts/functions";
+@import "../base/font.scss";
+
+/* 
+    @ website : vietnam-visa.vn
+    @ version : 4.0
+    @ Deployment date : 22/09/2020
+    @ Team : Front end develop VNB
+    */
+/* Responsive cho 3 màn hình chính*/
+@font-face {
+  font-family: "SVN-Airbnb";
+  src: url("./../fonts/SVN-Airbnb/OTF/SVN-Airbnb Cereal Bold.otf");
+  src: local("SVN-Airbnb Bold"), local("SVN-Airbnb-Bold"), url("./../fonts/SVN-Airbnb/OTF/SVN-Airbnb Cereal Bold.otf?#iefix") format("opentype");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "SVN-Airbnb";
+  src: url("./../fonts/SVN-Airbnb/OTF/SVN-Airbnb Cereal Book.otf");
+  src: local("SVN-Airbnb Book"), local("SVN-Airbnb-Book"), url("./../fonts/SVN-Airbnb/OTF/SVN-Airbnb Cereal Book.otf?#iefix") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "SVN-Airbnb";
+  src: url("./../fonts/SVN-Airbnb/OTF/SVN-Airbnb Cereal Medium.otf");
+  src: local("SVN-Airbnb Medium"), local("SVN-Airbnb-Medium"), url("./../fonts/SVN-Airbnb/OTF/SVN-Airbnb Cereal Medium.otf?#iefix") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "icomoon";
+  src: url("./../fonts/icomoon.eot");
+//   src: url("./../fonts/icomoon.eot") format("embedded-opentype"), url("./../fonts/icomoon.ttf?y3d7zy") format("truetype"), url("./../fonts/icomoon.woff?y3d7zy") format("woff"), url("./../fonts/icomoon.svg?y3d7zy") format("svg");
+src: url("./../fonts/icomoon.eot") format("embedded-opentype"), url("./../fonts/icomoon.ttf") format("truetype"), url("./../fonts/icomoon.woff") format("woff"), url("./../fonts/icomoon.svg") format("svg");
+  
+font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+[class^=icon-],
+[class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "icomoon" !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-accruary:before {
+  content: "\e900";
+  color: #009eeb;
+}
+
+.icon-affiliate-earn:before {
+  content: "\e901";
+}
+
+.icon-affiliate-placce:before {
+  content: "\e902";
+}
+
+.icon-affiliate-register:before {
+  content: "\e903";
+}
+
+.icon-apply .path1:before {
+  content: "\e904";
+  color: rgb(216, 216, 216);
+}
+
+.icon-apply .path2:before {
+  content: "\e905";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+
+.icon-apply .path3:before {
+  content: "\e906";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+
+.icon-approve:before {
+  content: "\e907";
+}
+
+.icon-arrow-long:before {
+  content: "\e908";
+  color: #009eeb;
+}
+
+.icon-booking-arrow-left:before {
+  content: "\e909";
+}
+
+.icon-booking-arrow-right:before {
+  content: "\e90a";
+}
+
+.icon-booking-arrow-up:before {
+  content: "\e90b";
+}
+
+.icon-booking-down:before {
+  content: "\e90c";
+}
+
+.icon-booking-edit:before {
+  content: "\e90d";
+  color: #009eeb;
+}
+
+.icon-bottom-fb:before {
+  content: "\e90e";
+  color: #009eeb;
+}
+
+.icon-bottom-logo .path1:before {
+  content: "\e90f";
+  color: rgb(162, 204, 57);
+}
+
+.icon-bottom-logo .path2:before {
+  content: "\e910";
+  margin-left: -1em;
+  color: rgb(162, 204, 57);
+}
+
+.icon-bottom-logo .path3:before {
+  content: "\e911";
+  margin-left: -1em;
+  color: rgb(30, 148, 209);
+}
+
+.icon-bottom-logo .path4:before {
+  content: "\e912";
+  margin-left: -1em;
+  color: rgb(244, 130, 32);
+}
+
+.icon-bottom-logo .path5:before {
+  content: "\e913";
+  margin-left: -1em;
+  color: rgb(244, 130, 32);
+}
+
+.icon-bottom-tw:before {
+  content: "\e914";
+  color: #009eeb;
+}
+
+.icon-contact-email:before {
+  content: "\e915";
+  color: #009eeb;
+}
+
+.icon-contact-fb:before {
+  content: "\e916";
+  color: #009eeb;
+}
+
+.icon-contact-mobile:before {
+  content: "\e917";
+  color: #009eeb;
+}
+
+.icon-contact-phone:before {
+  content: "\e918";
+  color: #009eeb;
+}
+
+.icon-contact-sp:before {
+  content: "\e919";
+  color: #009eeb;
+}
+
+.icon-contact-tel:before {
+  content: "\e91a";
+  color: #009eeb;
+}
+
+.icon-expert:before {
+  content: "\e91b";
+  color: #009eeb;
+}
+
+.icon-get-va:before {
+  content: "\e91c";
+}
+
+.icon-hotline-red:before {
+  content: "\e91d";
+  color: #eb5757;
+}
+
+.icon-instant-sp:before {
+  content: "\e91e";
+  color: #009eeb;
+}
+
+.icon-livechat-blue:before {
+  content: "\e91f";
+  color: #009eeb;
+}
+
+.icon-mail-thankyou .path1:before {
+  content: "\e920";
+  color: rgb(240, 247, 253);
+}
+
+.icon-mail-thankyou .path2:before {
+  content: "\e921";
+  margin-left: -1em;
+  color: rgb(240, 247, 253);
+}
+
+.icon-mail-thankyou .path3:before {
+  content: "\e922";
+  margin-left: -1em;
+  color: none;
+}
+
+.icon-mail-thankyou .path4:before {
+  content: "\e923";
+  margin-left: -1em;
+  color: rgb(240, 247, 253);
+}
+
+.icon-mail-thankyou .path5:before {
+  content: "\e924";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+
+.icon-mail-thankyou .path6:before {
+  content: "\e925";
+  margin-left: -1em;
+  color: none;
+}
+
+.icon-mail-thankyou .path7:before {
+  content: "\e926";
+  margin-left: -1em;
+  color: rgb(240, 247, 253);
+}
+
+.icon-mail-thankyou .path8:before {
+  content: "\e927";
+  margin-left: -1em;
+  color: none;
+}
+
+.icon-menu-arrow:before {
+  content: "\e928";
+}
+
+.icon-menu-arrow-left:before {
+  content: "\e929";
+}
+
+.icon-menu-arrow-right:before {
+  content: "\e92a";
+}
+
+.icon-menu-arrow-up:before {
+  content: "\e92b";
+}
+
+.icon-minus:before {
+  content: "\e92c";
+}
+
+.icon-minus-round .path1:before {
+  content: "\e92d";
+  color: rgb(255, 255, 255);
+}
+
+.icon-minus-round .path2:before {
+  content: "\e92e";
+  margin-left: -1em;
+  color: rgb(0, 158, 235);
+}
+
+.icon-oder-calender:before {
+  content: "\e92f";
+  color: #d8d8d8;
+}
+
+.icon-option-arrow-down:before {
+  content: "\e930";
+  color: #666;
+}
+
+.icon-option-arrow-left:before {
+  content: "\e931";
+  color: #666;
+}
+
+.icon-option-arrow-right:before {
+  content: "\e932";
+  color: #666;
+}
+
+.icon-option-arrow-up:before {
+  content: "\e933";
+  color: #666;
+}
+
+.icon-order-account:before {
+  content: "\e934";
+  color: #666;
+}
+
+.icon-order-howto:before {
+  content: "\e935";
+  color: #666;
+}
+
+.icon-order-statistics:before {
+  content: "\e936";
+  color: #009eeb;
+}
+
+.icon-order-web:before {
+  content: "\e937";
+  color: #666;
+}
+
+.icon-plus:before {
+  content: "\e938";
+}
+
+.icon-plus-round .path1:before {
+  content: "\e939";
+  color: rgb(255, 255, 255);
+}
+
+.icon-plus-round .path2:before {
+  content: "\e93a";
+  margin-left: -1em;
+  color: rgb(0, 158, 235);
+}
+
+.icon-respect:before {
+  content: "\e93b";
+  color: #009eeb;
+}
+
+.icon-sidebar-check:before {
+  content: "\e93c";
+  color: #2cd1a0;
+}
+
+.icon-sidebar-dowload:before {
+  content: "\e93d";
+  color: #fff;
+}
+
+.icon-sidebar-email:before {
+  content: "\e93e";
+}
+
+.icon-sidebar-phone:before {
+  content: "\e93f";
+}
+
+.icon-sideba-time:before {
+  content: "\e940";
+}
+
+.icon-step1-calender:before {
+  content: "\e941";
+}
+
+.icon-tick:before {
+  content: "\e942";
+  color: #2cd1a0;
+}
+
+.icon-topbar-arrow:before {
+  content: "\e943";
+}
+
+.icon-topbar-arrow-left:before {
+  content: "\e944";
+}
+
+.icon-topbar-arrow-right:before {
+  content: "\e945";
+}
+
+.icon-topbar-arrow-up:before {
+  content: "\e946";
+}
+
+.icon-topbar-calender:before {
+  content: "\e947";
+}
+
+.icon-topbar-phone:before {
+  content: "\e948";
+}
+
+.icon-transparency:before {
+  content: "\e949";
+  color: #009eeb;
+}
+
+/* Begin component style Related Topics */
+@font-face {
+  font-family: "icomoon";
+  src: url("./../fonts/icomoon.woff") format("woff");
+  /* Add other formats as needed */
+}
+.__vnvisa-sidebar #ez-toc-container {
+  display: none !important;
+}
+@media (max-width: 479px) {
+  .__vnvisa-sidebar {
+    margin-top: 48px;
+  }
+}
+
+.related-topics {
+  margin-bottom: 32px;
+}
+.related-topics ul {
+  padding: 0;
+  margin: 0;
+}
+.related-topics ul li {
+  list-style: none;
+}
+.related-topics ul li a {
+  display: block;
+  padding: 8px 0;
+  text-decoration: revert !important;
+}
+.related-topics ul li a:hover {
+  color: #009EEB;
+}
+.related-topics ul li p {
+  margin-bottom: 0;
+  color: #666666;
+  font-size: 14px;
+  line-height: 22px;
+}
+.related-topics ul li:last-child {
+  border: none;
+}
+.related-topics ul li:last-child a {
+  padding-bottom: 0 !important;
+}
+.related-topics a:hover {
+  color: #009EEB;
+}
+
+/* End component style Related post*/
+/* Begin component Why apply with us? */
+.__sb-why-apply {
+  margin-bottom: 32px;
+  border: 1px solid #d8d8d8;
+  border-radius: 8px;
+  padding: 24px;
+}
+.__sb-why-apply .list-why-apply ul {
+  margin: 0;
+  padding: 0;
+}
+.__sb-why-apply .list-why-apply ul li {
+  list-style: none;
+  padding: 8px 0;
+  padding-left: 20px;
+  position: relative;
+}
+.__sb-why-apply .list-why-apply ul li::before {
+  position: absolute;
+  content: "\e900";
+  font-family: "icomoon" !important;
+  left: 0;
+  color: #2CD1A0;
+}
+
+/* End component Why apply with us?*/
+/* Begin component contact us */
+.__sb-contact-us {
+  margin-bottom: 32px;
+  border: 1px solid #d8d8d8;
+  border-radius: 8px;
+  padding: 24px;
+}
+.__sb-contact-us .list-contact-us ul {
+  margin: 0;
+  padding: 0;
+}
+.__sb-contact-us .list-contact-us ul li {
+  list-style: none;
+  padding: 8px 0;
+  padding-left: 20px;
+  position: relative;
+  color: #009EEB;
+}
+.__sb-contact-us .list-contact-us ul li a {
+  color: #009EEB;
+}
+.__sb-contact-us .list-contact-us ul li::before {
+  position: absolute;
+  font-family: "icomoon" !important;
+  left: 0;
+  color: #009EEB;
+}
+.__sb-contact-us .list-contact-us ul li:first-child::before {
+  content: "\e918";
+}
+.__sb-contact-us .list-contact-us ul li:last-child::before {
+  content: "\e915";
+}
+.__sb-contact-us .sb-time .icon-sideba-time::before {
+  color: #009EEB;
+  margin-right: 4px;
+}
+
+/* End component contact us */
+/* Begin component sidebar Most popular */
+.__vnvisa-sb-popular {
+  margin-bottom: 32px;
+}
+.__vnvisa-sb-popular .list-popular .popular-item {
+  display: flex;
+  margin-bottom: 16px;
+}
+.__vnvisa-sb-popular .list-popular .popular-item:last-child {
+  margin-bottom: 0;
+}
+.__vnvisa-sb-popular .list-popular .popular-item img {
+  width: 129px;
+  height: 86px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+.__vnvisa-sb-popular .list-popular .popular-item .info-popular {
+  margin-left: 30px;
+}
+.__vnvisa-sb-popular .list-popular .popular-item .info-popular .title-popular {
+  font-size: 18px;
+  line-height: 28px;
+  margin-bottom: 4px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  height: auto;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+@media (max-width: 479px) {
+  .__vnvisa-sb-popular {
+    margin-top: 24px;
+  }
+}
+
+/* End component sidebar Most popular */
+/* Begin component sidebar section content */
+.__sidebar-about-us {
+  transition: all 0.4s;
+  top: 120px;
+}
+.__sidebar-about-us ul {
+  margin: 0;
+  padding: 0;
+}
+.__sidebar-about-us ul li {
+  list-style: none;
+}
+.__sidebar-about-us ul li a {
+  display: block;
+  padding: 12px 0 12px 20px;
+}
+.__sidebar-about-us ul li a.active {
+  border-left: 4px solid #009EEB;
+  background: #F0F7FD;
+}
+@media (max-width: 479px) {
+  .__sidebar-about-us {
+    margin-bottom: 32px;
+  }
+}
+
+.sidebar-fix {
+  position: fixed;
+  transform: translateY(15%);
+  z-index: 1;
+}
+@media (max-width: 479px) {
+  .sidebar-fix {
+    position: static;
+    transform: translateY(0);
+  }
+}
+
+/* End component sidebar section content */
+/* Begin component sidebar all service */
+.__sb-all-services {
+  margin-bottom: 32px;
+}
+.__sb-all-services button {
+  margin: 1px;
+}
+.__sb-all-services .list-all-service a {
+  display: block;
+  margin: 8px 15px;
+}
+.__sb-all-services .list-all-service .accordion-sidebar {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  transition: 0.4s;
+  font-weight: 500;
+}
+.__sb-all-services .list-all-service .button-active {
+  color: #009eeb;
+  border-left: 5px solid #009eeb;
+}
+.__sb-all-services .list-all-service .accordion-sidebar:hover {
+  color: #009eeb;
+  border-left: 5px solid #009eeb;
+}
+.__sb-all-services .list-all-service .panel {
+  padding: 0 18px;
+  background-color: white;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.2s ease-out;
+}
+.__sb-all-services .list-all-service .panel ul {
+  margin-top: 15px;
+}
+
+/* End component sidebar all service */
+/*
+ * Áp dụng chung các block sidebar
+ * added by hien-tech (hiennd@ancu.com) at 2021-11-18
+ */
+.vidi__sidebar {
+  margin-bottom: 32px;
+}
+.vidi__sidebar h3 {
+  font-size: 24px;
+  line-height: 32px;
+  border-bottom: 1px solid #d8d8d8;
+  padding-bottom: 16px;
+  text-align: left;
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+.vidi__sidebar-sticky {
+  position: fixed;
+  top: 100px;
+  background: #fff;
+  width: 370px;
+}

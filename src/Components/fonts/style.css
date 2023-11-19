@@ -1,0 +1,31 @@
+@font-face {
+    font-family: 'icovidi';
+    src:  url('fonts/icovidi.eot?7pitrz');
+    src:  url('fonts/icovidi.eot?7pitrz#iefix') format('embedded-opentype'),
+      url('fonts/icovidi.ttf?7pitrz') format('truetype'),
+      url('fonts/icovidi.woff?7pitrz') format('woff'),
+      url('fonts/icovidi.svg?7pitrz#icovidi') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+  
+  [class^="icovidi__"], [class*=" icovidi__"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icovidi' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+  
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .icovidi__thunder:before {
+    content: "\e900";
+  }
+  

@@ -1,0 +1,417 @@
+/* 
+    @ Sử dụng cho khối popup Booking service
+    @ update date : 20/11/2020
+    @ By : biendv (biendv@ancu.com)
+*/
+
+.__popup_book_servive {
+    .modal-dialog {
+        max-width: 400px;
+        .modal-body {
+            padding: 0;
+            .wrap_book_servive {
+                background: $n-white;
+                border-radius: 8px;
+                .wrap-title {
+                    position: relative;
+                    padding: 16px;
+                    border-bottom: 1px solid #d8d8d8;
+                    .pop-title {
+                        font-weight: 500;
+                        font-size: 20px;
+                        line-height: 28px;
+                        text-align: center;
+                    }
+                    .close {
+                        position: absolute;
+                        top: 50%;
+                        right: 16px;
+                        transform: translateY(-50%);
+                    }
+                }
+                .wrap-content {
+                    .--h-box {
+                        input {
+                            height: 48px;
+                        }
+                    }
+                    .--border {
+                        input {
+                            border-radius: 8px;
+                            border-color: #d8d8d8;
+                        }
+                    }
+                    .--box {
+                        label {
+                            margin-bottom: 6px;
+                        }
+                    }
+                    padding: 24px 40px 32px 40px;
+                    @media (max-width: 576px) {
+                        padding: 24px 10px 32px 10px;
+                    }
+                    .text-please {
+                        text-align: center;
+                        color: #666;
+                    }
+                    .__nber-trave {
+                        margin-bottom: 16px;
+                        @include cus-flex;
+                        justify-content: space-between;
+                        .choose-amount {
+                            @include cus-flex;
+                            .--disable {
+                                opacity: .6;
+                                cursor: no-drop !important;
+                            }
+                            .--border-round {
+                                border: 2px solid $c-green;
+                                border-radius: 50%;
+                                width: 32px;
+                                height: 32px;
+                                text-align: center;
+                                line-height: 32px;
+                                cursor: pointer;
+                                user-select: none;
+                            }
+                            .number-value {
+                                margin: 0 12px;
+                            }
+                        }
+                    }
+                    .__phone {
+                        .wrap-phone {
+                            @include cus-flex;
+                            border: 1px solid #d8d8d8;
+                            border-radius: 8px;
+                            .__country {
+                                height: 48px;
+                                width: 40%;
+                                select {
+                                    border: none;
+                                    background: none;
+                                    height: 100%;
+                                }
+                                .select2-container {
+                                    height: 100%;
+                                    display: flex;
+                                    align-items: center;
+                                    box-sizing: border-box;
+                                    padding: .375rem .75rem;
+                                    cursor: pointer;
+                                    &:focus {
+                                        outline: none;
+                                    }
+                                    .selection {
+                                        width: 100%;
+                                        height: 100%;
+                                        &:focus {
+                                            outline: none;
+                                        }
+                                        .select2-selection {
+                                            display: block !important;
+                                            width: 100%;
+                                            height: 100% !important;
+                                            border: none;
+                                            &:focus {
+                                                outline: none;
+                                            }
+                                            .select2-selection__rendered {
+                                                width: 100%;
+                                                height: 100%;
+                                                padding: 0;
+                                                display: flex;
+                                                align-items: center;
+                                            }
+                                            .select2-selection__arrow {
+                                                display: none;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            .__phone {
+                                border-left: 1px solid #d8d8d8;
+                                input {
+                                    border: none !important;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .loading-form {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 100%;
+                height: 100%;
+                background: rgb(255 255 255 / 80%);
+                z-index: 1;
+                display: none;
+                align-items: center;
+                justify-content: center;
+                .lds-ellipsis div {
+                    background: $c-green;
+                }
+            }
+        }
+    }
+}
+
+
+/* 
+    @ Sử dụng cho khối Extend visa in Vietnam
+    @ update date : 20/11/2020
+    @ By : biendv (biendv@ancu.com)
+*/
+
+.__popup-extend-visa {
+    display: flex;
+    flex-wrap: wrap;
+    width: 600px;
+    margin: auto;
+    border-radius: 8px;
+    border: 1px solid #d8d8d8;
+    .--w-50 {
+        width: 50%;
+    }
+    .__img {
+        img {
+            border-radius: 8px 0 0 8px;
+        }
+    }
+    .wrap-extend-visa {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            transform: rotate(45deg);
+        }
+        .extend-visa {
+            .title {
+                font-weight: bold;
+                font-size: 24px;
+                line-height: 32px;
+                text-align: center;
+                width: 85%;
+                margin: auto;
+            }
+            .info {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin: 48px 0;
+                ul {
+                    margin-bottom: 12px;
+                    padding-left: 56px;
+                }
+            }
+        }
+    }
+}
+
+
+/* 
+    @ Sử dụng cho khối Extend visa in Vietnam form Visa extension request
+    @ update date : 20/11/2020
+    @ By : biendv (biendv@ancu.com)
+*/
+
+.wrap-form-exten {
+    position: relative;
+    width: 368px;
+    margin: auto;
+    border: 1px solid #d8d8d8;
+    border-radius: 8px;
+    padding: 32px 32px 24px 32px;
+    .close {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        transform: rotate(45deg);
+    }
+    .--w-form-req {
+        .title {
+            font-weight: bold;
+            font-size: 24px;
+            line-height: 32px;
+            text-align: center;
+        }
+    }
+    .__popup-form-ext-req {
+        width: 100%;
+        .form-group {
+            margin-bottom: 24px;
+            input {
+                height: 48px;
+                border-radius: 8px;
+                border-color: #d8d8d8;
+            }
+        }
+        .form-group.invalid {
+            .form-control {
+                border-color: #f33a58;
+            }
+            .form-message {
+                color: #f33a58;
+                font-size: 12px;
+                line-height: 14px;
+                padding: 4px 0 0;
+            }
+        }
+    }
+    .__popup-thank {
+        text-align: center;
+        .mess {
+            color: #666;
+        }
+    }
+    .loading-vs-etx {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 8px;
+        background: rgb(255 255 255 / 67%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1;
+        .lds-ellipsis {
+            div {
+                background: $c-green;
+            }
+        }
+    }
+}
+
+
+/* 
+    @ Sử dụng cho khối send request
+    @ update date : 21/01/2021
+    @ By : biendv (biendv@ancu.com)
+*/
+
+.__popup-form-send-req {
+    .modal-dialog {
+        max-width: 400px;
+        .modal-body {
+            padding: 32px;
+        }
+    }
+    .close {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+    }
+    .--w-form-req {
+        .title {
+            font-weight: bold;
+            font-size: 24px;
+            line-height: 32px;
+            text-align: center;
+        }
+    }
+    .__country {
+        display: flex;
+        flex-wrap: wrap;
+        height: 48px;
+        border: 1px solid #d8d8d8;
+        border-radius: 8px;
+        select {
+            width: 45%;
+            height: 100%;
+            border: none;
+            border-right: 1px solid #d8d8d8;
+            border-radius: 8px 0 0 8px;
+        }
+        input {
+            width: 55%;
+            border: none;
+            height: 100% !important;
+        }
+        .select2-container {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            box-sizing: border-box;
+            padding: .375rem .75rem;
+            cursor: pointer;
+            border-right: 1px solid #d8d8d8;
+            .selection {
+                width: 100%;
+                height: 100%;
+                .select2-selection {
+                    display: block !important;
+                    width: 100%;
+                    height: 100% !important;
+                    border: none;
+                    .select2-selection__rendered {
+                        width: 100%;
+                        height: 100%;
+                        padding: 0;
+                        display: flex;
+                        align-items: center;
+                    }
+                    .select2-selection__arrow {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+    .__country.invalid {
+        border-color: #f33a58;
+    }
+    .__popup-form-req {
+        width: 100%;
+        .form-group {
+            margin-bottom: 24px;
+            input {
+                height: 48px;
+                border-radius: 8px;
+                border-color: #d8d8d8;
+            }
+        }
+        .form-group.invalid {
+            .form-control {
+                border-color: #f33a58;
+            }
+            .form-message {
+                color: #f33a58;
+                font-size: 12px;
+                line-height: 14px;
+                padding: 4px 0 0;
+            }
+        }
+    }
+    .loading-form-send-req {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 8px;
+        background: rgb(255 255 255 / 67%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1;
+        .lds-ellipsis {
+            div {
+                background: $c-green;
+            }
+        }
+    }
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    outline: none;
+}

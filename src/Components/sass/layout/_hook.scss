@@ -1,0 +1,94 @@
+
+/* 
+    @ website : vietnam-visa.vn
+    @ version : 4.0
+    @ Deployment date : 08/10/2020
+    @ Team : Front end develop VNB
+*/
+
+// Cấu trúc css được chia thành các component
+// Mỗi component sẽ quản lý 1 vùng giao diện
+
+
+/* Hook related post
+ @ date : 08/10/2020
+ @ author : biendv
+*/
+.__vnvisa-related-post {
+	.owl-related-post {
+		.owl-stage {
+			@include mobile {
+				padding-left: 0 !important;
+			}
+		}
+		margin-top: 24px;
+		.owl-nav {
+            margin: 0;
+        }
+        .owl-prev,.owl-next {
+            background-color: white !important;
+            width: 40px;
+			height: 40px;
+			top: 32% !important;
+            border-radius: 50% !important;
+            line-height: 40px !important;
+            box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.1);
+		}
+		.visa-related-item {
+			img {
+				width: 270px;
+				height: 180px;
+				object-fit: cover;
+				border-radius: 4px;
+				@include mobile {
+					width: 210px;
+					height: 140px;
+				}
+			}
+			.related-title {
+				@include display-limit-2(2);
+				a {
+					display: block;
+				}
+			}
+		}
+	}
+}
+
+/* Hook banner top
+ @ date : 09/10/2020
+ @ author : biendv
+*/
+.banner-top {
+	background: url('../images/im_banner_top.png') no-repeat center center;
+	width: 100%;
+	height: 300px;
+	background-size: cover;
+	position: relative;
+	z-index: 1;
+	@include cus-flex;
+	justify-content: center;
+	text-align: center;
+	color: $n-white;
+	&::before {
+        position: absolute;
+        content: '';
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.4);
+        z-index: -1;
+	}
+	.wrap-content-banner {
+		.banner-title {
+			font-weight: bold;
+			font-size: 40px;
+			line-height: 52px;
+		}
+		.banner-des {
+			width: 65%;
+			margin: auto;
+		}
+	}
+}
